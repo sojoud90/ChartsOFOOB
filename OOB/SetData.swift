@@ -11,10 +11,12 @@ import UIKit
 import Charts
 public class SetData {
     
+    
+    public init(){}
     //Linechart
     
     //add charts
-   class func DrawLinechartData(entriesData : [ChartDataEntry] , Colors : [NSUIColor] , view : UIView) -> UIView {
+   public func DrawLinechartData(entriesData : [ChartDataEntry] , Colors : [NSUIColor] , view : UIView) -> UIView {
         let set1 = LineChartDataSet(values: entriesData, label: "DataSet 1")
         set1.colors = Colors
         let data = LineChartData(dataSet: set1)
@@ -29,7 +31,7 @@ public class SetData {
     
     
     
-    class func  DrawPiechartData(entriesData : [PieChartDataEntry] , Colors : [NSUIColor] , view : UIView) -> UIView {
+    public func  DrawPiechartData(entriesData : [PieChartDataEntry] , Colors : [NSUIColor] , view : UIView) -> UIView {
         
         let chartView = PieChartView.init(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         
@@ -49,7 +51,7 @@ public class SetData {
     
     
     //Circl chart
-    class func  DrawCirclChartData(entriesData : [PieChartDataEntry] , Colors : [NSUIColor] , view : UIView) -> UIView {
+    public func  DrawCirclChartData(entriesData : [PieChartDataEntry] , Colors : [NSUIColor] , view : UIView) -> UIView {
         
         let chartView = PieChartView.init(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         
@@ -72,7 +74,7 @@ public class SetData {
     
     
     // Gauge
-    class func DrawGaugeChart(entriesData : [PieChartDataEntry], Colors : [NSUIColor] , view : UIView) -> UIView {
+    public func DrawGaugeChart(entriesData : [PieChartDataEntry], Colors : [NSUIColor] , view : UIView) -> UIView {
         
         let set = PieChartDataSet(values: entriesData, label: "Election Results")
         
@@ -93,7 +95,7 @@ public class SetData {
     }
     
     //BarChartDataEntry
-    class func  DrawBarChartData(entriesData : [BarChartDataEntry] , Colors : [NSUIColor], view : UIView) -> UIView {
+    public func  DrawBarChartData(entriesData : [BarChartDataEntry] , Colors : [NSUIColor], view : UIView) -> UIView {
         let set = BarChartDataSet(values: entriesData, label: "Election Results")
         
         set.colors = Colors
