@@ -13,7 +13,7 @@ class SetData: NSObject {
     
     //Linechart
     
-    
+    //
    class func DrawLinechartData(entriesData : [ChartDataEntry] , Colors : [NSUIColor] , view : UIView) -> UIView {
         let set1 = LineChartDataSet(values: entriesData, label: "DataSet 1")
         set1.colors = Colors
