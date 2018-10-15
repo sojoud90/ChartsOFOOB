@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
  
   s.name         = "ChartsOFOOB"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "A short description of ChartsOFOOB."
 
  
@@ -17,10 +17,10 @@ Pod::Spec.new do |s|
 
   s.author             = "sojoud90"
   
-   s.platform     = :ios
+   s.platform     = :ios, "10.0"
  
  
-  s.source       = { :git => "https://github.com/sojoud90/ChartsOFOOB.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/sojoud90/ChartsOFOOB.git", :tag => "1.1.0" }
 
 
   
@@ -35,6 +35,8 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "danielgindi/Charts", "~> 3.1.1"
+
+#FFMpegPlayer', :git => '...FFMpegPlayer.git'
+ #s.dependency =  "Charts", git => "https://github.com/danielgindi/Charts"
 
 end

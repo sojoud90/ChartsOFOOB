@@ -10,34 +10,54 @@ import UIKit
 
 import Charts
 class SetData: NSObject {
-    
+   
     //Linechart
     
-    
-   class func DrawLinechartData(entriesData : [ChartDataEntry] , Colors : [NSUIColor] , view : UIView) -> UIView {
+    class func DrawLinechartData (values : [Double] , labels : [String] ,ColorS : [String] , view : UIView) -> UIView {
+        var colorsArr         = [NSUIColor]()
+        var entriesData         = [ChartDataEntry]()
+       
+        for i in  0..<values.count {
+            
+            colorsArr.append(ChartColorTemplates.colorFromString(ColorS[i]))
+            entriesData.append(PieChartDataEntry(value: values[i], data: labels[i] as AnyObject))
+        }
+
         let set1 = LineChartDataSet(values: entriesData, label: "DataSet 1")
-        set1.colors = Colors
+        set1.colors = colorsArr
         let data = LineChartData(dataSet: set1)
-    
-     let chartView = LineChartView.init(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
-       chartView.data = data
+        
+        let chartView = LineChartView.init(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        chartView.data = data
         return chartView
     }
     
+    
+
     
     //Piechart
     
     
     
-    class func  DrawPiechartData(entriesData : [PieChartDataEntry] , Colors : [NSUIColor] , view : UIView) -> UIView {
+    class func  DrawPiechartData(values : [Double] , labels : [String] ,ColorS : [String] , view : UIView) -> UIView {
         
+        
+        
+        var colorsArr         = [NSUIColor]()
+        var entriesData         = [ChartDataEntry]()
+        
+        for i in  0..<values.count {
+            
+            colorsArr.append(ChartColorTemplates.colorFromString(ColorS[i]))
+            entriesData.append(PieChartDataEntry(value: values[i], data: labels[i] as AnyObject))
+        }
         let chartView = PieChartView.init(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         
         
      
         let set = PieChartDataSet(values: entriesData, label: "Election Results")
         
-        set.colors = Colors
+        set.colors = colorsArr
         
         let data = PieChartData(dataSet: set)
        
@@ -49,15 +69,23 @@ class SetData: NSObject {
     
     
     //Circl chart
-    class func  DrawCirclChartData(entriesData : [PieChartDataEntry] , Colors : [NSUIColor] , view : UIView) -> UIView {
+    class func  DrawCirclChartData(values : [Double] , labels : [String] ,ColorS : [String]  , view : UIView) -> UIView {
         
+        var colorsArr         = [NSUIColor]()
+        var entriesData         = [ChartDataEntry]()
+        
+        for i in  0..<values.count {
+            
+            colorsArr.append(ChartColorTemplates.colorFromString(ColorS[i]))
+            entriesData.append(PieChartDataEntry(value: values[i], data: labels[i] as AnyObject))
+        }
         let chartView = PieChartView.init(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         
         
         
         let set = PieChartDataSet(values: entriesData, label: "Election Results")
         
-        set.colors = Colors
+        set.colors = colorsArr
         
         let data = PieChartData(dataSet: set)
         chartView.holeRadiusPercent = 0
@@ -72,11 +100,22 @@ class SetData: NSObject {
     
     
     // Gauge
-    class func DrawGaugeChart(entriesData : [PieChartDataEntry], Colors : [NSUIColor] , view : UIView) -> UIView {
+    class func DrawGaugeChart(values : [Double] , labels : [String] ,ColorS : [String] , view : UIView) -> UIView {
         
+        
+        
+        
+        var colorsArr         = [NSUIColor]()
+        var entriesData         = [ChartDataEntry]()
+        
+        for i in  0..<values.count {
+            
+            colorsArr.append(ChartColorTemplates.colorFromString(ColorS[i]))
+            entriesData.append(PieChartDataEntry(value: values[i], data: labels[i] as AnyObject))
+        }
         let set = PieChartDataSet(values: entriesData, label: "Election Results")
         
-        set.colors = Colors
+        set.colors = colorsArr
         
         let data = PieChartData(dataSet: set)
         
@@ -93,10 +132,23 @@ class SetData: NSObject {
     }
     
     //BarChartDataEntry
-    class func  DrawBarChartData(entriesData : [BarChartDataEntry] , Colors : [NSUIColor], view : UIView) -> UIView {
+    
+    
+    class func  DrawBarChartData(xvalues : [Double] ,yvalues : [Double], labels : [String] ,ColorS : [String], view : UIView) -> UIView {
+    
+    
+        var colorsArr         = [NSUIColor]()
+        var entriesData         = [ChartDataEntry]()
+        
+        for i in  0..<xvalues.count {
+            
+            colorsArr.append(ChartColorTemplates.colorFromString(ColorS[i]))
+            entriesData.append(BarChartDataEntry(x: xvalues[i], y: yvalues[i], data: labels[i] as AnyObject))
+        }
+    
         let set = BarChartDataSet(values: entriesData, label: "Election Results")
         
-        set.colors = Colors
+        set.colors = colorsArr
         
         let data = BarChartData(dataSet: set)
         
