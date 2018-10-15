@@ -144,6 +144,7 @@ class SetData: NSObject {
             
             colorsArr.append(ChartColorTemplates.colorFromString(ColorS[i]))
             entriesData.append(BarChartDataEntry(x: xvalues[i], y: yvalues[i], data: labels[i] as AnyObject))
+    
         }
     
         let set = BarChartDataSet(values: entriesData, label: "Election Results")
