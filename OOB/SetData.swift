@@ -9,6 +9,8 @@
 import UIKit
 
 import Charts
+
+
 class SetData: NSObject {
    
     //Linechart

@@ -62,8 +62,7 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
     @objc open func drawDataSet(context: CGContext, dataSet: ICandleChartDataSet)
     {
         guard
-            let dataProvider = dataProvider,
-            let chart = dataProvider as? CandleStickChartView
+            let dataProvider = dataProvider
             else { return }
 
         let trans = dataProvider.getTransformer(forAxis: dataSet.axisDependency)
@@ -71,7 +70,6 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
         let phaseY = animator.phaseY
         let barSpace = dataSet.barSpace
         let showCandleBar = dataSet.showCandleBar
-        let entryCount = dataSet.entryCount
         
         _xBounds.set(chart: dataProvider, dataSet: dataSet, animator: animator)
         
@@ -258,7 +256,7 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
             }
 
             let axElement = createAccessibleElement(withIndex: j,
-                                                    container: chart,
+                                                    container: dataProvider,
                                                     dataSet: dataSet)
             { (element) in
                 element.accessibilityLabel = "\(doesContainMultipleDataSets ? "\(dataSet.label ?? "Dataset")" : "") " + "\(xPos) - \(accessibilityMovementDescription). low: \(low), high: \(high), opening: \(open), closing: \(close)"
@@ -346,7 +344,7 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
                                 x: pt.x,
                                 y: pt.y - yOffset),
                             align: .center,
-                            attributes: [NSAttributedStringKey.font: valueFont, NSAttributedStringKey.foregroundColor: dataSet.valueTextColorAt(j)])
+                            attributes: [NSAttributedString.Key.font: valueFont, NSAttributedString.Key.foregroundColor: dataSet.valueTextColorAt(j)])
                     }
                     
                     if let icon = e.icon, dataSet.isDrawIconsEnabled

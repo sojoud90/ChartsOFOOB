@@ -1,24 +1,18 @@
 PODS:
-  - Charts (3.1.1):
-    - Charts/Core (= 3.1.1)
-  - Charts/Core (3.1.1)
+  - Charts (3.2.1):
+    - Charts/Core (= 3.2.1)
+  - Charts/Core (3.2.1)
 
 DEPENDENCIES:
-  - Charts (from `https://github.com/danielgindi/Charts`, branch `master`)
+  - Charts
 
-EXTERNAL SOURCES:
-  Charts:
-    :branch: master
-    :git: https://github.com/danielgindi/Charts
-
-CHECKOUT OPTIONS:
-  Charts:
-    :commit: 4fca1f7a027c69782522416ef73d9bb92119d1d3
-    :git: https://github.com/danielgindi/Charts
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Charts
 
 SPEC CHECKSUMS:
-  Charts: 82c6776516b844809f55228d720129a9dc25b9f2
+  Charts: f122fb70b19847fa5817d018b77d6c5a2296ab25
 
-PODFILE CHECKSUM: 5f63db813e1953308611f19e486ca742e31521f1
+PODFILE CHECKSUM: 75f108ab13737e352df6ea305ce5611b7062960d
 
 COCOAPODS: 1.5.3
