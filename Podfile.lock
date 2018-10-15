@@ -1,7 +1,7 @@
 PODS:
-  - Charts (3.1.1):
-    - Charts/Core (= 3.1.1)
-  - Charts/Core (3.1.1)
+  - Charts (3.2.1):
+    - Charts/Core (= 3.2.1)
+  - Charts/Core (3.2.1)
 
 DEPENDENCIES:
   - Charts (from `https://github.com/danielgindi/Charts`, branch `master`)
@@ -13,11 +13,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Charts:
-    :commit: 4fca1f7a027c69782522416ef73d9bb92119d1d3
+    :commit: 9c01bc9797733f6ba218adb38b93ccb192e35f47
     :git: https://github.com/danielgindi/Charts
 
 SPEC CHECKSUMS:
-  Charts: 82c6776516b844809f55228d720129a9dc25b9f2
+  Charts: f122fb70b19847fa5817d018b77d6c5a2296ab25
 
 PODFILE CHECKSUM: 5f63db813e1953308611f19e486ca742e31521f1
 
