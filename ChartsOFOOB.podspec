@@ -37,6 +37,6 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
 #FFMpegPlayer', :git => '...FFMpegPlayer.git'
- #s.dependency =  "Charts", git => "https://github.com/danielgindi/Charts"
+ s.dependency =  "Charts", git => "https://github.com/danielgindi/Charts"
 
 end
